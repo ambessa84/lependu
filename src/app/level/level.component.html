@@ -1,0 +1,15 @@
+<div>
+  Bonjour, bienvenue sur le jeu du pendu.<br>
+  Veuillez choisir un niveau de difficulté.
+  <br>
+  <br>
+  <select (change)="displayGame($event)">
+    <option>Veuillez choisir un niveau</option>
+    <option *ngFor="let level of levels" [value]="level.index">
+      {{ level.value }}
+    </option>
+  </select> 
+</div>
+<div>
+  <app-game [selectedLevel]="selectedLevel"></app-game>
+</div>

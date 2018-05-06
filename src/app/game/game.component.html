@@ -1,0 +1,19 @@
+<div>
+  <br>
+  <div class="secretWord">
+      <div *ngFor="let letter of secretWord">
+        <p *ngIf="letter.chosen; else show">{{ letter.name }}</p>
+        <ng-template #show>_</ng-template>
+      </div>
+  </div>
+  <div>
+    <br>
+    <label>Saisir une lettre</label>
+    <input #textbox type="text" required>
+    <button (click)="checkLetter(textbox.value)">Valider</button>
+  </div>
+
+  <p>
+    <span>Vous avez {{ missesAllowed - numberOfMisses }} essais restants.</span>
+  </p>
+</div>
